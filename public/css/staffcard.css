@@ -1,0 +1,372 @@
+/* Staff Section */
+.staff-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Menyembunyikan kartu staff yang tidak terlihat */
+}
+
+.staff-title h1 {
+    font-size: 2.8rem;
+    color: #28a745;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.staff-title::after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 3px;
+    background-color: #28a745;
+    margin: 20px auto;
+}
+
+/* Staff Carousel */
+.staff-carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 150%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+/* Staff Container */
+.staff-container {
+    display: flex;
+    gap: 20px; /* Menambah jarak antar kartu */
+    transition: transform 0.5s ease;
+    padding: 10px 0; /* Padding vertikal dalam kontainer */
+    margin-left: 20px; /* Margin kiri */
+    margin-right: 20px; /* Margin kanan */
+}
+
+/* Staff Card */
+.staff-card {
+    flex: 0 0 150px;
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    padding: 10px; /* Padding dalam kartu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px); /* Efek hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Gambar Staff */
+.staff-image {
+    width: 100%;
+    height: 250px; /* Sesuaikan tinggi berdasarkan rasio gambar */
+    object-fit: cover;
+    border-bottom: 4px solid #1d7431;
+}
+
+/* Informasi di Kartu */
+.staff-info {
+    padding: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Nama Staff */
+.staff-name {
+    font-size: 1rem; /* Ukuran font cukup besar */
+    font-weight: bold;
+    color: #ffffff;
+    margin: 5px 0;
+    word-wrap: break-word; /* Membungkus teks jika panjang */
+}
+
+/* Jabatan Staff */
+.staff-position {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: 5px 0;
+    color: white;
+    font-style: italic;
+    word-wrap: break-word; /* Membungkus teks jika panjang */
+    line-height: 1.4; /* Jarak antar baris lebih besar */
+}
+
+/* Navigation Buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.nav-button.left {
+    left: 0;
+}
+
+.nav-button.right {
+    right: 0;
+}
+
+.nav-button:hover {
+    background-color: #1d7431;
+}
+
+/* Media Query for screens 768px or smaller */
+@media (max-width: 768px) {
+    .staff-title h1 {
+        font-size: 2rem; /* Menyesuaikan ukuran font judul */
+    }
+
+    .staff-carousel {
+        width: 100%; /* Carousel mengambil 100% lebar layar */
+        max-width: 100%; /* Maksimalkan lebar carousel */
+        margin: 10px 0; /* Mengurangi margin untuk mobile */
+    }
+
+    .staff-container {
+        width: 100%; /* Membuat container staff mengisi seluruh lebar layar */
+        gap: 15px; /* Mengurangi gap antar kartu */
+        padding: 10px 0; /* Menyesuaikan padding */
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .staff-card {
+        flex: 0 0 45%; /* Menyesuaikan lebar kartu, 2 kartu dalam satu baris */
+        max-width: 150px; /* Membatasi lebar kartu */
+    }
+
+    /* Gambar Staff */
+    .staff-image {
+        height: 200px; /* Mengurangi tinggi gambar pada perangkat kecil */
+    }
+
+    /* Nama dan Jabatan Staff */
+    .staff-name {
+        font-size: 0.9rem; /* Mengurangi ukuran font nama */
+    }
+
+    .staff-position {
+        font-size: 0.8rem; /* Mengurangi ukuran font jabatan */
+    }
+
+    .nav-button {
+        padding: 8px 10px; /* Menyesuaikan ukuran tombol navigasi */
+    }
+}
+
+@media (max-width: 480px) {
+    .staff-card {
+        flex: 0 0 90%; /* Menyesuaikan kartu menjadi lebih besar pada layar kecil */
+    }
+
+    .staff-title h1 {
+        font-size: 1.6rem; /* Menyesuaikan ukuran judul di layar lebih kecil */
+    }
+
+    .staff-image {
+        height: 180px; /* Mengurangi tinggi gambar lebih lanjut */
+    }
+
+    .staff-name {
+        font-size: 0.8rem; /* Mengurangi ukuran font nama */
+    }
+
+    .staff-position {
+        font-size: 0.7rem; /* Mengurangi ukuran font jabatan */
+    }
+}
+
+/* Styling untuk area utama foto */
+/* Section Styling untuk Galeri Foto */
+.gallery-section {
+    padding: 40px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+/* Judul Galeri Foto */
+.gallery-title h1 {
+    font-size: 2.8rem;
+    color: #28a745;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Garis Pembatas untuk Judul */
+.gallery-title::after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 3px;
+    background-color: #28a745;
+    margin: 20px auto;
+}
+
+/* Deskripsi Galeri Foto */
+.gallery-title p {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.photo-display {
+    position: relative;
+    width: 80%; /* Lebar area utama */
+    max-width: 800px; /* Batas maksimal lebar */
+    margin: 0 auto 20px; /* Tengah dan jarak bawah */
+    background-color: #000; /* Latar belakang hitam */
+    border-radius: 10px; /* Sudut melengkung */
+    overflow: hidden; /* Menghindari elemen keluar */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Gambar utama */
+.photo-display img {
+    width: 100%; /* Gambar memenuhi area */
+    height: 500px; /* Menjaga aspek rasio */
+    object-fit: cover; /* Memastikan gambar terpusat */
+    border-radius: 10px; /* Menyelaraskan dengan area utama */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Efek transisi */
+}
+
+/* Efek zoom saat hover */
+.photo-display:hover img {
+    transform: scale(1.05); /* Memperbesar sedikit */
+    opacity: 0.9; /* Transparansi untuk efek */
+}
+
+/* Tombol navigasi kiri-kanan */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Warna putih transparan */
+    color: #333333; /* Warna teks */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.photo-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.photo-thumbnails img {
+    width: 120px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    object-fit: cover;
+}
+
+.photo-thumbnails img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Tombol navigasi kiri-kanan */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Warna putih transparan */
+    color: #333; /* Warna teks */
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover tombol navigasi */
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 1); /* Putih solid */
+    transform: scale(1.1); /* Sedikit membesar */
+}
+
+/* Tombol navigasi kiri */
+.left-arrow {
+    left: 10px;
+}
+
+/* Tombol navigasi kanan */
+.right-arrow {
+    right: 10px;
+}
+
+/* Responsif: Geser tombol lebih dekat untuk layar kecil */
+@media (max-width: 768px) {
+    .left-arrow {
+        left: -40px; /* Sesuaikan jarak pada layar kecil */
+    }
+
+    .right-arrow {
+        right: -40px; /* Sesuaikan jarak pada layar kecil */
+    }
+}
+
+@media (max-width: 1200px) {
+    .staff-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 card per baris */
+    }
+}
+
+@media (max-width: 768px) {
+    .staff-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 card per baris */
+    }
+}
+
+@media (max-width: 480px) {
+    .staff-container {
+        grid-template-columns: 1fr; /* 1 card per baris */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

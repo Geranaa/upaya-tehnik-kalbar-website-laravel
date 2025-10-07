@@ -1,0 +1,302 @@
+body {
+    background-color: white;
+    font-family: "Cabin", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.service h2 {
+    font-size: 30 px;
+}
+
+.hero {
+    position: relative;
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 1s ease-in-out;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    z-index: 2;
+    text-align: left;
+}
+
+.hero-logo {
+    height: 120px;
+    width: auto;
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-text p {
+    margin: 5px 0 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.about {
+    background-color: #01953f;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 5px;
+}
+
+.content {
+    text-align: center; /* Menjaga teks tetap rata tengah */
+    padding: 20px 20px; /* Memberikan ruang vertikal dan horizontal */
+    max-width: 1400px; /* Membatasi lebar konten agar tidak terlalu panjang */
+    margin: 0 auto; /* Menjaga konten tetap di tengah */
+    background-color: white; /* Warna latar belakang */
+    font-size: 24px; /* Ukuran font yang lebih besar */
+    line-height: 1.6; /* Memberikan jarak antarbaris agar lebih mudah dibaca */
+    font-weight: 500; /* Sedikit lebih tebal untuk keterbacaan */
+}
+
+.content button {
+    background-color: #01953f;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px; /* Tombol dengan sudut sangat melengkung */
+    cursor: pointer;
+    font-size: 1rem; /* Ukuran font yang lebih besar */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi untuk efek hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk tombol */
+}
+
+/* Efek hover untuk tombol */
+.content button:hover {
+    background-color: #017c33; /* Warna hijau lebih gelap */
+    transform: scale(1.1); /* Tombol sedikit membesar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+/* Efek saat tombol ditekan */
+.content button:active {
+    transform: scale(0.95); /* Tombol sedikit mengecil */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Bayangan lebih kecil */
+}
+
+/* Responsivitas untuk perangkat kecil */
+@media (max-width: 768px) {
+    .content {
+        padding: 30px 15px;
+    }
+
+    .content button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+.services {
+    background-color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-item i {
+    font-size: 40px;
+    color: #036f5e;
+    margin-bottom: 10px;
+}
+
+.service-item:hover {
+    outline: #017c33; /* Warna hijau lebih gelap */
+    transform: scale(1.1); /* Tombol sedikit membesar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+.service-item button {
+    background-color: #01953f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi untuk efek hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk tombol */
+}
+
+.service-item button:hover {
+    background-color: #017c33; /* Warna hijau lebih gelap */
+    transform: scale(1.1); /* Tombol sedikit membesar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+/* Efek saat tombol ditekan */
+.service-item button:active {
+    transform: scale(0.95); /* Tombol sedikit mengecil */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Bayangan lebih kecil */
+}
+
+/* Responsivitas untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 50vh; /* Adjust height for smaller screens */
+        background-attachment: scroll; /* Disable fixed background attachment for better performance on mobile */
+        background-size: cover; /* Ensure image covers entire area */
+    }
+
+    .hero-section {
+        height: 60vh; /* Reduce height for smaller screens */
+        background-attachment: scroll;
+        background-size: cover; /* Ensure image covers entire area */
+    }
+
+    .hero-content {
+        padding: 15px;
+        text-align: center; /* Center content on mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Reduce font size */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .hero-button {
+        padding: 8px 16px; /* Adjust button size */
+        font-size: 0.9rem; /* Make button text smaller */
+    }
+
+    .hero-logo {
+        height: 80px; /* Adjust logo size */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Adjust heading font size */
+    }
+
+    .hero-text p {
+        font-size: 1.2rem; /* Adjust paragraph font size */
+    }
+
+    .header {
+        flex-direction: column; /* Elemen header disusun vertikal */
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .header-left {
+        flex-direction: column; /* Logo dan teks disusun vertikal */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-left h1 {
+        font-size: 1.2rem; /* Ukuran font lebih kecil */
+    }
+
+    .header-left p {
+        font-size: 0.8rem; /* Ukuran font deskripsi */
+    }
+
+    .nav {
+        flex-wrap: wrap; /* Navigasi memanfaatkan ruang vertikal */
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero {
+        height: 100vh; /* Hero lebih kecil untuk layar kecil */
+        text-align: center; /* Teks berada di tengah */
+        padding: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Ukuran judul lebih kecil */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Ukuran teks deskripsi lebih kecil */
+    }
+
+    .about {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .content {
+        font-size: 18px; /* Ukuran font lebih kecil */
+        padding: 15px; /* Padding lebih sempit */
+    }
+
+    .services {
+        padding: 30px 10px; /* Padding untuk bagian layanan */
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk layanan */
+        gap: 15px;
+    }
+
+    .service-item {
+        padding: 15px; /* Padding layanan lebih kecil */
+    }
+
+    .service-item i {
+        font-size: 30px; /* Ikon lebih kecil */
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Satu kolom di footer */
+        text-align: center; /* Konten footer rata tengah */
+    }
+
+    .footer-section {
+        margin-bottom: 20px; /* Jarak antar bagian footer */
+    }
+
+    .footer-logo img {
+        height: 60px; /* Logo footer lebih kecil */
+    }
+}

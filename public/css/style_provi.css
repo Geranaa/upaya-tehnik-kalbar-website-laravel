@@ -1,0 +1,482 @@
+body {
+    font-family: "cabin", sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    background-color: #01953f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    height: 60px;
+    max-width: 100%;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.header-left p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+
+.nav a,
+.dropdown-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown-menu a {
+    color: #333;
+}
+
+.nav a:hover,
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+    text-decoration: none; /* Tetap tanpa garis bawah saat hover */
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    gap: 15px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 150px;
+    border-radius: 5px;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.hero {
+    position: relative;
+    background-image: url("/image/Picture1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-section {
+    position: relative;
+    background-image: url("/image/143562.jpg  ");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white; /* Warna teks */
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Latar belakang gelap transparan */
+    z-index: 1; /* Membawa overlay di atas background */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Membawa konten di atas overlay */
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Latar belakang transparan untuk konten */
+    border-radius: 10px; /* Membuat sudut konten membulat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Tambahkan efek bayangan */
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase; /* Membuat teks menjadi huruf kapital */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.hero-content ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.hero-content ul li {
+    margin-bottom: 5px;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #01953f; /* Warna hijau */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero-button:hover {
+    background-color: #036f5e; /* Warna hijau lebih gelap */
+    transform: scale(1.05); /* Membesarkan tombol saat dihover */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    z-index: 2;
+    text-align: left;
+}
+
+.hero-logo {
+    height: 120px;
+    width: auto;
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.hero-text p {
+    margin: 5px 0 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.about {
+    background-color: #01953f;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.content {
+    text-align: center;
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content button {
+    background-color: #01953f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.content button:hover {
+    background-color: #01953f;
+}
+
+.services {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-item i {
+    font-size: 40px;
+    color: #036f5e;
+    margin-bottom: 10px;
+}
+
+.service-item button {
+    background-color: #01953f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.service-item button:hover {
+    background-color: #01953f;
+}
+
+.footer {
+    background-color: #01953f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #ffd700; /* Highlight judul */
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.footer-section p:hover {
+    text-decoration: underline; /* Efek interaktif */
+    cursor: pointer;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffd700;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: start; /* Pusatkan logo secara horizontal */
+    gap: 20px; /* Berikan jarak antar logo */
+    align-items: start;
+    margin: 0 0 0 auto;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+    margin: 0; /* Beri jarak antar logo */
+    transition: transform 0.3s ease; /* Efek hover opsional */
+}
+
+.footer-logo img:hover {
+    transform: scale(1.1); /* Perbesar logo saat hover */
+}
+
+.copyright {
+    background-color: #007330;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 50vh; /* Adjust height for smaller screens */
+        background-attachment: scroll; /* Disable fixed background attachment for better performance on mobile */
+        background-size: cover; /* Ensure image covers entire area */
+    }
+
+    .hero-section {
+        height: 60vh; /* Reduce height for smaller screens */
+        background-attachment: scroll;
+        background-size: cover; /* Ensure image covers entire area */
+    }
+
+    .hero-content {
+        padding: 15px;
+        text-align: center; /* Center content on mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Reduce font size */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .hero-button {
+        padding: 8px 16px; /* Adjust button size */
+        font-size: 0.9rem; /* Make button text smaller */
+    }
+
+    .hero-logo {
+        height: 80px; /* Adjust logo size */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Adjust heading font size */
+    }
+
+    .hero-text p {
+        font-size: 1.2rem; /* Adjust paragraph font size */
+    }
+}
+.header {
+    flex-direction: column; /* Elemen header disusun vertikal */
+    align-items: flex-start;
+    padding: 10px 15px;
+}
+
+.header-left {
+    flex-direction: column; /* Logo dan teks disusun vertikal */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.header-left h1 {
+    font-size: 1.2rem; /* Ukuran font lebih kecil */
+}
+
+.header-left p {
+    font-size: 0.8rem; /* Ukuran font deskripsi */
+}
+
+.nav {
+    flex-wrap: wrap; /* Navigasi memanfaatkan ruang vertikal */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hero {
+    height: 100vh; /* Hero lebih kecil untuk layar kecil */
+    text-align: center; /* Teks berada di tengah */
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 2rem; /* Ukuran judul lebih kecil */
+}
+
+.hero-text p {
+    font-size: 1rem; /* Ukuran teks deskripsi lebih kecil */
+}
+
+.about {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.content {
+    font-size: 18px; /* Ukuran font lebih kecil */
+    padding: 15px; /* Padding lebih sempit */
+}
+
+.services {
+    padding: 30px 10px; /* Padding untuk bagian layanan */
+}
+
+.service-grid {
+    grid-template-columns: 1fr; /* Satu kolom untuk layanan */
+    gap: 15px;
+}
+
+.service-item {
+    padding: 15px; /* Padding layanan lebih kecil */
+}
+
+.service-item i {
+    font-size: 30px; /* Ikon lebih kecil */
+}
+
+.footer-content {
+    grid-template-columns: 1fr; /* Satu kolom di footer */
+    text-align: center; /* Konten footer rata tengah */
+}
+
+.footer-section {
+    margin-bottom: 20px; /* Jarak antar bagian footer */
+}
+
+.footer-logo img {
+    height: 60px; /* Logo footer lebih kecil */
+}

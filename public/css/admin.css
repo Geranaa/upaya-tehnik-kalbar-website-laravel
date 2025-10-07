@@ -1,0 +1,106 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Layout */
+body {
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #004d25;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+/* Logo di Sidebar */
+.sidebar .logo h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li a.active, 
+.sidebar nav ul li a:hover {
+    background-color: #2b8f4e;
+}
+
+/* Tombol Menu */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 18px;
+    background-color: #2b8f4e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100; /* Tombol selalu di atas */
+}
+
+.menu-btn:hover {
+    background-color: #256940;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    margin-left: 250px; /* Beri ruang untuk sidebar */
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+}
+
+main.sidebar-hidden {
+    margin-left: 0; /* Geser konten saat sidebar disembunyikan */
+}
+
+/* Header */
+header {
+    background-color: #2b8f4e;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative; /* Pastikan tidak bertumpuk */
+    z-index: 999;
+}

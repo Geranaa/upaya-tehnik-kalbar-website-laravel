@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Admin Dashboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/javasricpt/jquery-3.3.1.min.js"></script>
+    <script src="/javasricpt/bootstrap.min.js"></script>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .modal {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            max-width: 90%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modalTitle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center
+        }
+
+        */ .modal h3 {
+            margin-top: 0;
+
+        }
+
+        .modal label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .modal input {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn-save {
+            background-color: #007bff;
+            color: white;
+            padding: 11px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-save:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-cancel {
+            text-decoration: none;
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            max-height: 100px;
+        }
+
+        .btn-cancel:hover {
+            background-color: #5a6268;
+        }
+
+        select {
+            padding: 8px 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-input {
+            padding: 12px 20px;
+            /* Memberikan padding lebih besar untuk kenyamanan */
+            font-size: 1.1em;
+            /* Ukuran font sedikit lebih besar */
+            border-radius: 25px;
+            /* Membuat sudut lebih melengkung */
+            margin-left: 10px;
+            /* Jarak kiri */
+            width: 300px;
+            /* Lebar lebih panjang */
+            border: 1px solid #ccc;
+            /* Border lebih lembut dengan warna abu-abu */
+            transition: all 0.3s ease;
+            /* Transisi halus untuk efek hover dan focus */
+            outline: none;
+            /* Menghilangkan outline default saat input difokuskan */
+        }
+
+        .search-input:hover {
+            border-color: #007bff;
+            /* Border berubah warna saat hover */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            /* Menambahkan bayangan */
+        }
+
+        .search-input:focus {
+            border-color: #28a745;
+            /* Border berubah saat fokus */
+            box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+            /* Menambahkan bayangan hijau saat fokus */
+            background-color: #f8f9fa;
+            /* Latar belakang menjadi lebih terang saat fokus */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="employeeModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Edit Data Pegawai</h3>
+            <form id="employeeFormEdit" enctype="multipart/form-data" method="POST"
+                action="{{ route('pegawai.update', $karyawan->id) }}">
+                @csrf
+                <label for="nama">Name:</label>
+                <input type="text" id="nama" name="nama" placeholder="Enter employee name"
+                    value="{{ $karyawan->nama }}" required>
+                <select id="jabatan" name="jabatan" required>
+                    <option value="Astman " {{ old('jabatan', $karyawan->jabatan) == 'Astman' ? 'selected' : '' }}>
+                        Astman
+                    </option>
+                    <option value="Admin " {{ old('jabatan', $karyawan->jabatan) == 'Admin' ? 'selected' : '' }}>
+                        Admin
+                    </option>
+                    <option value="Teknisi " {{ old('jabatan', $karyawan->jabatan) == 'Teknisi' ? 'selected' : '' }}>
+                        Teknisi
+                    </option>
+
+                </select>
+                <label for="divisi">Division:</label>
+                <select id="divisi" name="divisi" required>
+                    <option value="Assurance" {{ old('divisi', $karyawan->divisi) == 'Assurance' ? 'selected' : '' }}>
+                        Assurance
+                    </option>
+                    <option value="Project" {{ old('divisi', $karyawan->divisi) == 'Project' ? 'selected' : '' }}>
+                        Project</option>
+                    <option value="Maintenance"
+                        {{ old('divisi', $karyawan->divisi) == 'Maintenance' ? 'selected' : '' }}>Maintenance</option>
+                    <option value="Provisioning"
+                        {{ old('divisi', $karyawan->divisi) == 'Provisioning' ? 'selected' : '' }}>Provisioning
+                    </option>
+                </select>
+                <label for="fotoEdit" id="fotoLabel">Photo:</label>
+                <input type="file" id="foto" name="foto" value="{{ $karyawan->foto }}">
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-save" id="saveEmployeeBtn">Save</button>
+                    <a href="{{ route('showAP') }}" type="button" id="btn-cancel" class="btn btn-cancel">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>

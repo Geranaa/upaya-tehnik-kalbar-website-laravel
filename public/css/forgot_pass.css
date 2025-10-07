@@ -1,0 +1,465 @@
+.forgot-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #e8f5e9; /* Hijau lembut */
+    margin: 0;
+}
+
+.forgot-section .container {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    max-width: 90%;
+    animation: fadeIn 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.forgot-section .container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Ikon header */
+.forgot-section .icon-container {
+    font-size: 3em;
+    color: #4caf50;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.forgot-section h1 {
+    font-size: 2.5em;
+    color: #388e3c;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.forgot-section p {
+    font-size: 1em;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* Input dan label */
+.forgot-section .input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.forgot-section .input-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4caf50;
+}
+
+.forgot-section input[type="text"],
+.forgot-section input[type="password"] {
+    width: calc(100% - 40px); /* Ruang untuk ikon */
+    padding: 12px 15px 12px 40px;
+    border: 2px solid #4caf50;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-section input[type="text"]:focus,
+.forgot-section input[type="password"]:focus {
+    border-color: #388e3c;
+    outline: none;
+}
+
+/* Tombol */
+.forgot-section .button-container {
+    margin-top: 20px;
+}
+
+.forgot-section button {
+    background: #4caf50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-section button:hover {
+    background: #265f28;
+    transform: scale(1.05);
+}
+
+.forgot-section button i {
+    margin-right: 8px;
+}
+
+/* Tautan */
+.forgot-section a {
+    display: block;
+    margin-top: 15px;
+    color: #388e3c;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.forgot-section a:hover {
+    color: #2e7d32;
+    text-decoration: underline;
+    transform: translateX(-5px);
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 768px) {
+    .forgot-section .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .forgot-section h1 {
+        font-size: 2em;
+    }
+
+    .forgot-section input[type="text"],
+    .forgot-section input[type="password"] {
+        font-size: 14px;
+    }
+
+    .forgot-section button {
+        font-size: 16px;
+    }
+}
+
+/* Responsif untuk ponsel */
+@media (max-width: 480px) {
+    .forgot-section .container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .forgot-section h1 {
+        font-size: 1.6em;
+    }
+
+    .forgot-section input[type="text"],
+    .forgot-section input[type="password"] {
+        padding: 10px 12px 10px 35px;
+        font-size: 14px;
+    }
+
+    .forgot-section button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .forgot-section a {
+        font-size: 12px;
+    }
+}
+
+
+
+
+.forgot2-body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #c1cfc2; /* Hijau lembut */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.forgot2 {
+    background: #ffffff;
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.forgot2::before {
+    content: "🔑";
+    font-size: 50px;
+    color: #4caf50;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.forgot2 h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.forgot2 label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.forgot2 input[type="text"] {
+    width: 92%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.forgot2 input[type="text"]:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+.forgot2 button {
+    width: 100%;
+    padding: 12px;
+    background: #4caf50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.forgot2 button:hover {
+    background: #388e3c;
+    transform: scale(1.05);
+}
+
+.forgot2 a {
+    display: block;
+    margin-top: 15px;
+    color: #388e3c;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.forgot2 a:hover {
+    color: #2e7d32;
+    text-decoration: underline;
+    transform: translateX(-5px);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .forgot2 {
+        padding: 20px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .forgot2 {
+        padding: 15px;
+    }
+
+    .forgot2 h2 {
+        font-size: 20px;
+    }
+
+    .forgot2 button {
+        font-size: 16px;
+    }
+
+    .forgot2 a {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+.forgot3 {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e8f5e9; /* Latar belakang hijau lembut */
+}
+
+.forgot3 .container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.forgot3 h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #388e3c;
+}
+
+.forgot3 label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.forgot3 input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.forgot3 input[type="password"]:focus {
+    border-color: #66bb6a;
+    outline: none;
+}
+
+.forgot3 button {
+    background-color: #4caf50;
+    color: #ffffff;
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.forgot3 button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+.forgot3 a {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #388e3c;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.forgot3 a:hover {
+    color: #2e7d32;
+    text-decoration: underline;
+    transform: translateX(-5px);
+}
+
+/* Ikon animasi */
+.forgot3 .icon {
+    font-size: 50px;
+    color: #66bb6a;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+/* Animasi bounce */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animasi fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .forgot3 .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .forgot3 h1 {
+        font-size: 22px;
+    }
+
+    .forgot3 button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .forgot3 .container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .forgot3 h1 {
+        font-size: 18px;
+    }
+
+    .forgot3 button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .forgot3 a {
+        font-size: 12px;
+    }
+}

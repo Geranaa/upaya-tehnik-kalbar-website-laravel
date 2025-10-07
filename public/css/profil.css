@@ -1,0 +1,949 @@
+body {
+    font-family: "Cabin", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.service h2 {
+    font-size: 30 px;
+}
+
+.hero {
+    position: relative;
+    height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 1s ease-in-out;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    z-index: 2;
+    text-align: left;
+}
+
+.hero-logo {
+    height: 120px;
+    width: auto;
+}
+
+.hero-text h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-text p {
+    margin: 5px 0 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* General Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f7fa;
+}
+
+/* Sejarah Perusahaan */
+.sejarah-perusahaan {
+    text-align: right;
+    margin: 50px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.sejarah-perusahaan h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #006400;
+    margin-bottom: 10px;
+}
+
+.sejarah-perusahaan h2::after {
+    content: "";
+    display: block;
+    width: 100px; /* Panjang underline */
+    height: 3px; /* Ketebalan underline */
+    background-color: #009b2e; /* Warna underline */
+    margin: 10px auto 0; /* Margin otomatis untuk memusatkan */
+    border-radius: 5px; /* Membuat garis bawah lebih lembut */
+}
+
+/* Timeline */
+.timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timeline-column {
+    width: 100%;
+    max-width: 900px; /* Lebar lebih besar */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Jarak antar item */
+}
+
+.timeline-item {
+    background-color: #006400;
+    color: white;
+    padding: 30px 50px; /* Perbesar padding */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 850px; /* Lebar maksimum lebih besar */
+    animation: fadeIn 1s ease-out;
+    position: relative;
+    overflow: hidden; /* Untuk elemen hover dekoratif */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek interaktif */
+}
+
+.timeline-item:hover {
+    transform: scale(1.02); /* Sedikit membesar saat hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4); /* Bayangan lebih besar */
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #009b2e; /* Garis dekoratif */
+    transition: width 0.3s ease;
+}
+
+.timeline-item:hover::before {
+    width: 10px; /* Garis melebar saat hover */
+}
+
+.timeline-item h3 {
+    font-size: 2em; /* Ukuran font lebih besar */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-transform: uppercase; /* Huruf kapital untuk penekanan */
+}
+
+.timeline-item p {
+    font-size: 1.2em; /* Perbesar teks paragraf */
+    line-height: 1.8; /* Jarak antar baris */
+}
+
+/* Short Divider */
+.hr-short {
+    width: 250px;
+    border-top: 3px solid #009b2e;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-item {
+        background-color: #006400;
+        color: white;
+        padding: 20px 30px; /* Perbesar padding */
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        margin: 0 auto;
+        width: 100%;
+        max-width: 300px; /* Lebar maksimum lebih besar */
+        animation: fadeIn 1s ease-out;
+        position: relative;
+        overflow: hidden; /* Untuk elemen hover dekoratif */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek interaktif */
+    }
+
+    .timeline-column {
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+        gap: 40px;
+        margin-top: 20px;
+    }
+
+    .timeline-item h3 {
+        font-size: 1.8rem; /* Menyesuaikan ukuran font judul */
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 15px;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 1px; /* Memberikan jarak antar huruf */
+    }
+
+    .timeline-item p {
+        font-size: 1.1rem; /* Menyesuaikan ukuran font paragraf */
+        line-height: 1.8;
+        text-align: justify; /* Rata kiri-kanan untuk paragraf */
+    }
+
+    /* Adjust Title Font Size */
+    .sejarah-perusahaan h2 {
+        font-size: 2rem; /* Ukuran font judul lebih kecil untuk mobile */
+    }
+
+    .sejarah-perusahaan h2::after {
+        width: 80px; /* Panjang underline lebih kecil untuk mobile */
+    }
+    .visi-misi-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        margin-top: 20px;
+        width: 350px;
+        margin-left: 11px;
+    }
+}
+
+/* Visi dan Misi Section */
+.visi-misi-section {
+    text-align: center;
+}
+
+.visi-misi-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #006400;
+    margin-bottom: 10px;
+}
+
+.hr-long {
+    width: 150px;
+    height: 4px;
+    background-color: #009b2e;
+    margin: 10px auto 30px;
+    border-radius: 5px;
+}
+
+/* Kontainer Visi dan Misi */
+.visi-misi-container {
+    display: flex;
+    align-items: center; /* Memastikan elemen berada di tengah secara vertikal */
+    justify-content: space-around; /* Menjaga jarak yang merata antara elemen */
+    gap: 20px; /* Mengurangi gap antar elemen */
+    margin-top: 20px;
+}
+
+/* Kotak Visi dan Misi */
+.visi,
+.misi {
+    flex: 1; /* Membuat kedua elemen berbagi ruang secara merata */
+    height: 200px;
+    max-width: 600px; /* Membatasi lebar kotak untuk membuatnya lebih kecil */
+    background-color: #006400;
+    color: white;
+    padding: 20px; /* Mengurangi padding untuk membuat kotak lebih kecil */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Menjaga teks terpusat di dalam kotak */
+}
+
+/* Efek Hover */
+.visi:hover,
+.misi:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Judul Visi dan Misi */
+.visi h3,
+.misi h3 {
+    font-size: 1.5rem; /* Menurunkan ukuran font judul agar lebih proporsional */
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Teks Visi dan Misi */
+.visi p,
+.misi p {
+    font-size: 1rem; /* Menurunkan ukuran font paragraf untuk ruang yang lebih efisien */
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .visi-misi-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .visi,
+    .misi {
+        padding: 20px;
+    }
+
+    .visi h3,
+    .misi h3 {
+        font-size: 1.8rem;
+    }
+
+    .visi p,
+    .misi p {
+        font-size: 1rem;
+    }
+}
+
+/* Kenapa Anda Harus Memilih Kami Section */
+/* Kenapa Anda Harus Memilih Kami Section */
+.kenapa-pilih-kami {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.kenapa-pilih-kami h2 {
+    font-size: 3rem;
+    color: #006400;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.kenapa-pilih-kami h2::after {
+    content: "";
+    display: block;
+    width: 150px;
+    height: 4px;
+    background-color: #009b2e;
+    margin: 15px auto 0;
+    border-radius: 5px;
+}
+
+.keunggulan-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.keunggulan-item {
+    background-color: #f5f5f5;
+    border: 2px solid #009b2e;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px;
+}
+
+.keunggulan-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.keunggulan-item i {
+    font-size: 3rem;
+    color: #009b2e;
+    margin-bottom: 20px;
+}
+
+.keunggulan-item h3 {
+    font-size: 1.8rem;
+    color: #006400;
+    margin-bottom: 15px;
+}
+
+.keunggulan-item p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .keunggulan-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .keunggulan-item {
+        max-width: 100%;
+    }
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    width: bold;
+    color: #006400;
+}
+
+.map-container {
+    position: relative;
+    width: 600px;
+    margin: 20px auto;
+}
+
+.map-container img {
+    width: 100%;
+}
+
+.hotspot {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: rgba(255, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.hotspot:hover {
+    transform: scale(1.2);
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.hotspot span {
+    position: absolute;
+    bottom: -30px; /* Adjust this value to set the vertical distance of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    font-size: 14px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hotspot:hover span {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Adjust positions to match map pin locations */
+.hotspot1 {
+    top: 34%;
+    left: 16%;
+}
+.hotspot2 {
+    top: 40%;
+    left: 9.5%;
+}
+.hotspot3 {
+    top: 47%;
+    left: 9%;
+}
+.hotspot4 {
+    top: 54%;
+    left: 16%;
+}
+.hotspot5 {
+    top: 59%;
+    left: 18.5%;
+}
+.hotspot6 {
+    top: 55%;
+    left: 70.5%;
+}
+.hotspot7 {
+    top: 78%;
+    left: 34.5%;
+}
+.hotspot8 {
+    top: 52%;
+    left: 12%;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.8s ease-in-out;
+    display: none;
+    z-index: 1000;
+}
+
+.nav.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* Arrow color */
+    font-size: 2rem; /* Arrow size */
+    width: 40px; /* Button width */
+    height: 40px; /* Button height */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Circular buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10; /* Ensure it's above other elements */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth hover effects */
+}
+
+.nav.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Light background on hover */
+    color: black; /* Darker arrow color on hover */
+    transform: translateY(-50%) scale(1.1); /* Slightly enlarge on hover */
+}
+
+.nav.arrow.left {
+    left: 10px; /* Position to the left of the carousel */
+}
+
+.nav.arrow.right {
+    right: 10px; /* Position to the right of the carousel */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .nav.arrow {
+        font-size: 1.5rem; /* Smaller arrows on smaller screens */
+        width: 30px;
+        height: 30px;
+    }
+
+    .nav.arrow.left {
+        left: 5px; /* Adjusted position for smaller screens */
+    }
+
+    .nav.arrow.right {
+        right: 5px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    margin: 20px 0;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.description {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.map-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.map-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.map-link a:hover {
+    text-decoration: underline;
+}
+
+.close {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: #ff5e57;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close:hover {
+    background-color: #ff3b2f;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+/* Services Section */
+.services {
+    background-color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-item i {
+    font-size: 40px;
+    color: #036f5e;
+    margin-bottom: 10px;
+}
+
+.service-item:hover {
+    outline: #017c33; /* Warna hijau lebih gelap */
+    transform: scale(1.1); /* Tombol sedikit membesar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+.service-item button {
+    background-color: #01953f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi untuk efek hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk tombol */
+}
+
+.service-item button:hover {
+    background-color: #017c33; /* Warna hijau lebih gelap */
+    transform: scale(1.1); /* Tombol sedikit membesar */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih besar saat hover */
+}
+
+/* Efek saat tombol ditekan */
+.service-item button:active {
+    transform: scale(0.95); /* Tombol sedikit mengecil */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Bayangan lebih kecil */
+}
+
+.footer {
+    background-color: #01953f;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #ffd700; /* Highlight judul */
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.footer-section p:hover {
+    text-decoration: underline; /* Efek interaktif */
+    cursor: pointer;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #ffd700;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: start; /* Pusatkan logo secara horizontal */
+    gap: 20px; /* Berikan jarak antar logo */
+    align-items: start;
+    margin: 0 0 0 auto;
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+    margin: 0; /* Beri jarak antar logo */
+    transition: transform 0.3s ease; /* Efek hover opsional */
+}
+
+.footer-logo img:hover {
+    transform: scale(1.1); /* Perbesar logo saat hover */
+}
+
+.copyright {
+    background-color: #007330;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 50vh; /* Adjust height for smaller screens */
+        background-attachment: scroll; /* Disable fixed background attachment for better performance on mobile */
+        background-size: cover; /* Ensure image covers entire area */
+    }
+
+    .hero-section {
+        height: 60vh; /* Reduce height for smaller screens */
+        background-attachment: scroll;
+        background-size: cover; /* Ensure image covers entire area */
+    }
+
+    .hero-content {
+        padding: 15px;
+        text-align: center; /* Center content on mobile */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Reduce font size */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Reduce font size */
+    }
+
+    .hero-button {
+        padding: 8px 16px; /* Adjust button size */
+        font-size: 0.9rem; /* Make button text smaller */
+    }
+
+    .hero-logo {
+        height: 80px; /* Adjust logo size */
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Adjust heading font size */
+    }
+
+    .hero-text p {
+        font-size: 1.2rem; /* Adjust paragraph font size */
+    }
+
+    .header {
+        flex-direction: column; /* Elemen header disusun vertikal */
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .header-left {
+        flex-direction: column; /* Logo dan teks disusun vertikal */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-left h1 {
+        font-size: 1.2rem; /* Ukuran font lebih kecil */
+    }
+
+    .header-left p {
+        font-size: 0.8rem; /* Ukuran font deskripsi */
+    }
+
+    .nav {
+        flex-wrap: wrap; /* Navigasi memanfaatkan ruang vertikal */
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero {
+        height: 100vh; /* Hero lebih kecil untuk layar kecil */
+        text-align: center; /* Teks berada di tengah */
+        padding: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Ukuran judul lebih kecil */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Ukuran teks deskripsi lebih kecil */
+    }
+
+    .about {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .content {
+        font-size: 18px; /* Ukuran font lebih kecil */
+        padding: 15px; /* Padding lebih sempit */
+    }
+
+    .services {
+        padding: 30px 10px; /* Padding untuk bagian layanan */
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk layanan */
+        gap: 15px;
+    }
+
+    .service-item {
+        padding: 15px; /* Padding layanan lebih kecil */
+    }
+
+    .service-item i {
+        font-size: 30px; /* Ikon lebih kecil */
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Satu kolom di footer */
+        text-align: center; /* Konten footer rata tengah */
+    }
+
+    .footer-section {
+        margin-bottom: 20px; /* Jarak antar bagian footer */
+    }
+
+    .footer-logo img {
+        height: 60px; /* Logo footer lebih kecil */
+    }
+
+    .map-container {
+        width: 100%; /* Map menyesuaikan ukuran layar */
+        max-width: 100%; /* Ukuran peta tidak terbatas */
+    }
+
+    .hotspot {
+        width: 20px; /* Ukuran hotspot lebih kecil di layar kecil */
+        height: 20px;
+    }
+
+    .hotspot1 {
+        top: 38%;
+        left: 16%;
+    }
+    .hotspot2 {
+        top: 46%;
+        left: 9.5%;
+    }
+    .hotspot3 {
+        top: 50%;
+        left: 9%;
+    }
+    .hotspot4 {
+        top: 58%;
+        left: 16%;
+    }
+    .hotspot5 {
+        top: 62%;
+        left: 18.5%;
+    }
+    .hotspot6 {
+        top: 59%;
+        left: 70.5%;
+    }
+    .hotspot7 {
+        top: 80%;
+        left: 34.5%;
+    }
+    .hotspot8 {
+        top: 56%;
+        left: 12%;
+    }
+}
+/* bagian footer */

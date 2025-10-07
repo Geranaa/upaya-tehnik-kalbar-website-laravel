@@ -1,0 +1,154 @@
+body {
+    font-family: 'Cabin', sans-serif;;
+    margin: 0;
+    padding: 0;
+    background-color:white;
+}
+.contact-section {
+    background: linear-gradient(to right, #e0f7fa, #e8f5e9);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-section:hover {
+    transform: scale(1.02);
+}
+
+.contact-section h2 {
+    color: #007330;
+    font-size: 64px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.office-details {
+    max-width: 400px;
+    text-align: left;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.office-details:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.office-details h3 {
+    color: #007330;
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007330;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.office-details p {
+    color: #333;
+    font-size: 16px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.office-details p i {
+    color: #007330;
+    font-size: 18px;
+}
+
+.contact-image img {
+    max-width: 220px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-image img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-image {
+    flex-shrink: 0;
+}
+
+/* WhatsApp Link */
+.whatsapp-link {
+    margin-bottom: 20px; /* Jarak bawah tautan WhatsApp diperbaiki */
+    color: #25D366;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #25D366;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-link i {
+    margin-right: 11px;
+    font-size: 20px;
+}
+
+.whatsapp-link:hover {
+    background-color: #25D366;
+    color: #ffffff;
+}
+
+/* Jarak ke contact section */
+.contact-section-wrapper {
+    padding: 100px 40px; /* Jarak luar untuk contact section ditambah */
+    background-color: #f1f8e9;
+}
+
+/* Email-link section */
+.email-link {
+    display: inline-block;
+    margin-top: 20px; /* Jarak di atas email-link sedikit dikurangi */
+    color: #25D366;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #25D366;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.email-link i {
+    margin-right: 12px;
+    font-size: 20px;
+}
+
+.email-link:hover {
+    background-color: #25D366;
+    color: #ffffff;
+}
+
+/* Tambahkan jarak antar tautan */
+.contact-section a {
+    margin-right: 15px; /* Jarak horizontal antar link */
+}
